@@ -1,0 +1,21 @@
+//
+//  PrefixHeader.pch
+//  ImageExperiments
+//
+//  Created by Siebler, Tiago on 03/03/2017.
+//  Copyright © 2017 TGS. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#ifdef __cplusplus
+#import <opencv2/opencv.hpp>
+
+#endif
+
+
+
+#endif /* PrefixHeader_pch */

@@ -1,0 +1,960 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FC2780C81E9BD625001541AB /* NSScreen+PointConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2780C71E9BD625001541AB /* NSScreen+PointConversion.m */; };
+		FC2780CE1E9BDE27001541AB /* NSEvent+MouseClamped.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2780CD1E9BDE27001541AB /* NSEvent+MouseClamped.m */; };
+		FC2781621E9E8E91001541AB /* Tesseract.mm in Sources */ = {isa = PBXBuildFile; fileRef = FC2781611E9E8E91001541AB /* Tesseract.mm */; };
+		FC2781A21E9FD544001541AB /* NSString+cleaning.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2781A11E9FD544001541AB /* NSString+cleaning.m */; };
+		FC2781A51EA10BEF001541AB /* PokerOdds.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2781A41EA10BEF001541AB /* PokerOdds.m */; };
+		FC3A0A051E70A364004A1994 /* zyngaTable.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC3A0A041E70A364004A1994 /* zyngaTable.plist */; };
+		FC3A0A0B1E719B6A004A1994 /* relativeZyngaDict.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC3A0A0A1E719B6A004A1994 /* relativeZyngaDict.plist */; };
+		FC3A0A0F1E719D2B004A1994 /* StateMonitoringWindow.mm in Sources */ = {isa = PBXBuildFile; fileRef = FC3A0A0D1E719D2B004A1994 /* StateMonitoringWindow.mm */; };
+		FC3A0A101E719D2B004A1994 /* StateMonitoringWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC3A0A0E1E719D2B004A1994 /* StateMonitoringWindow.xib */; };
+		FC3A0A131E71BD2E004A1994 /* chip.png in Resources */ = {isa = PBXBuildFile; fileRef = FC3A0A121E71BD2E004A1994 /* chip.png */; };
+		FC3A0A151E71BD35004A1994 /* dealerChip.png in Resources */ = {isa = PBXBuildFile; fileRef = FC3A0A141E71BD35004A1994 /* dealerChip.png */; };
+		FC3AE7CE1EBF3BEC00796404 /* eng.cube.bigrams in CopyFiles */ = {isa = PBXBuildFile; fileRef = FC3AE7B41EBF3BCE00796404 /* eng.cube.bigrams */; };
+		FC3AE7CF1EBF3BEC00796404 /* eng.cube.fold in CopyFiles */ = {isa = PBXBuildFile; fileRef = FC3AE7B51EBF3BCE00796404 /* eng.cube.fold */; };
+		FC3AE7D01EBF3BEC00796404 /* eng.cube.lm in CopyFiles */ = {isa = PBXBuildFile; fileRef = FC3AE7B61EBF3BCE00796404 /* eng.cube.lm */; };
+		FC3AE7D11EBF3BEC00796404 /* eng.cube.nn in CopyFiles */ = {isa = PBXBuildFile; fileRef = FC3AE7B71EBF3BCE00796404 /* eng.cube.nn */; };
+		FC3AE7D21EBF3BEC00796404 /* eng.cube.params in CopyFiles */ = {isa = PBXBuildFile; fileRef = FC3AE7B81EBF3BCE00796404 /* eng.cube.params */; };
+		FC3AE7D31EBF3BEC00796404 /* eng.cube.size in CopyFiles */ = {isa = PBXBuildFile; fileRef = FC3AE7B91EBF3BCE00796404 /* eng.cube.size */; };
+		FC3AE7D41EBF3BEC00796404 /* eng.cube.word-freq in CopyFiles */ = {isa = PBXBuildFile; fileRef = FC3AE7BA1EBF3BCE00796404 /* eng.cube.word-freq */; };
+		FC3AE7D51EBF3BEC00796404 /* eng.tesseract_cube.nn in CopyFiles */ = {isa = PBXBuildFile; fileRef = FC3AE7BB1EBF3BCE00796404 /* eng.tesseract_cube.nn */; };
+		FC3AE7D61EBF3BEC00796404 /* eng.traineddata in CopyFiles */ = {isa = PBXBuildFile; fileRef = FC3AE7BC1EBF3BCE00796404 /* eng.traineddata */; };
+		FC3AE7D71EBF3BEC00796404 /* inttemp in CopyFiles */ = {isa = PBXBuildFile; fileRef = FC3AE7BD1EBF3BCE00796404 /* inttemp */; };
+		FC3AE7D81EBF3BEC00796404 /* normproto in CopyFiles */ = {isa = PBXBuildFile; fileRef = FC3AE7BE1EBF3BCE00796404 /* normproto */; };
+		FC3AE7D91EBF3BEC00796404 /* pfftable in CopyFiles */ = {isa = PBXBuildFile; fileRef = FC3AE7BF1EBF3BCE00796404 /* pfftable */; };
+		FC3AE7DA1EBF3BEC00796404 /* unicharset in CopyFiles */ = {isa = PBXBuildFile; fileRef = FC3AE7C01EBF3BCE00796404 /* unicharset */; };
+		FC65DD501E944C8200EDA21C /* ImageIndex.mm in Sources */ = {isa = PBXBuildFile; fileRef = FC65DD4F1E944C8200EDA21C /* ImageIndex.mm */; };
+		FC83396D1E6883F50072706B /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = FC83396C1E6883F50072706B /* AppDelegate.mm */; };
+		FC8339701E6883F50072706B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FC83396F1E6883F50072706B /* main.m */; };
+		FC8339721E6883F50072706B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC8339711E6883F50072706B /* Assets.xcassets */; };
+		FC8339751E6883F50072706B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC8339731E6883F50072706B /* MainMenu.xib */; };
+		FC8339A21E6981D50072706B /* Adler-32.c in Sources */ = {isa = PBXBuildFile; fileRef = FC8339881E6981D50072706B /* Adler-32.c */; };
+		FC8339A31E6981D50072706B /* gcd.c in Sources */ = {isa = PBXBuildFile; fileRef = FC83398B1E6981D50072706B /* gcd.c */; };
+		FC8339A41E6981D50072706B /* lcm.c in Sources */ = {isa = PBXBuildFile; fileRef = FC83398D1E6981D50072706B /* lcm.c */; };
+		FC8339A51E6981D50072706B /* NSData+Adler32.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8339911E6981D50072706B /* NSData+Adler32.m */; };
+		FC8339A61E6981D50072706B /* NSData+Output.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8339931E6981D50072706B /* NSData+Output.m */; };
+		FC8339A71E6981D50072706B /* NSData+stringAsBase.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8339951E6981D50072706B /* NSData+stringAsBase.m */; };
+		FC8339A81E6981D50072706B /* NSString+Adler32.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8339981E6981D50072706B /* NSString+Adler32.m */; };
+		FC8339A91E6981D50072706B /* NSString+stringAsBase.m in Sources */ = {isa = PBXBuildFile; fileRef = FC83399A1E6981D50072706B /* NSString+stringAsBase.m */; };
+		FC8339AA1E6981D50072706B /* NSString+stringAsReverseString.m in Sources */ = {isa = PBXBuildFile; fileRef = FC83399C1E6981D50072706B /* NSString+stringAsReverseString.m */; };
+		FC8339AB1E6981D50072706B /* BaseCharacters.m in Sources */ = {isa = PBXBuildFile; fileRef = FC83399F1E6981D50072706B /* BaseCharacters.m */; };
+		FC8339AC1E6981D50072706B /* swap.c in Sources */ = {isa = PBXBuildFile; fileRef = FC8339A01E6981D50072706B /* swap.c */; };
+		FC8339EC1E6D75020072706B /* NSImage+subImage.mm in Sources */ = {isa = PBXBuildFile; fileRef = FC8339EB1E6D75020072706B /* NSImage+subImage.mm */; };
+		FCCEDC691E8FCC8600E50654 /* PokerPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCEDC651E8FCC8500E50654 /* PokerPlayer.m */; };
+		FCCEDC6A1E8FCC8600E50654 /* PokerTable.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCEDC671E8FCC8500E50654 /* PokerTable.m */; };
+		FCCEDC701E914E6600E50654 /* PlayingCard.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCEDC6F1E914E6600E50654 /* PlayingCard.m */; };
+		FCE8B7621F819A5300EAD44D /* BotStateDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE8B7611F819A5300EAD44D /* BotStateDelegate.m */; };
+		FCE8B76D1F819A8300EAD44D /* PokerChoice.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE8B7631F819A8200EAD44D /* PokerChoice.m */; };
+		FCE8B76E1F819A8300EAD44D /* PokerLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE8B7661F819A8200EAD44D /* PokerLogger.m */; };
+		FCE8B76F1F819A8300EAD44D /* PokerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE8B7681F819A8200EAD44D /* PokerManager.m */; };
+		FCE8B7701F819A8300EAD44D /* NumbersHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE8B7691F819A8300EAD44D /* NumbersHelper.m */; };
+		FCE8B7711F819A8300EAD44D /* CHCSVParser.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE8B76C1F819A8300EAD44D /* CHCSVParser.m */; };
+		FCE8B7781F819AF200EAD44D /* ExternalWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE8B7721F819AF100EAD44D /* ExternalWindow.m */; };
+		FCE8B7791F819AF200EAD44D /* CoordinatesManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = FCE8B7751F819AF200EAD44D /* CoordinatesManager.mm */; };
+		FCE8B77A1F819AF200EAD44D /* ImageSection.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE8B7771F819AF200EAD44D /* ImageSection.m */; };
+		FCE8B7831F819B1700EAD44D /* POdds.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE8B77B1F819B1700EAD44D /* POdds.m */; };
+		FCE8B7841F819B1700EAD44D /* xorshift.c in Sources */ = {isa = PBXBuildFile; fileRef = FCE8B7801F819B1700EAD44D /* xorshift.c */; };
+		FCE8B7851F819B1700EAD44D /* poker.c in Sources */ = {isa = PBXBuildFile; fileRef = FCE8B7821F819B1700EAD44D /* poker.c */; };
+		FCE8B78A1F819B5C00EAD44D /* MagicNumbers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FCE8B7861F819B5C00EAD44D /* MagicNumbers.cpp */; };
+		FCE8B7911F819B9E00EAD44D /* CVHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = FCE8B78D1F819B9E00EAD44D /* CVHelper.mm */; };
+		FCE8B7921F819B9E00EAD44D /* CVSearchHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = FCE8B7901F819B9E00EAD44D /* CVSearchHelper.mm */; };
+		FCE8B79C1F819C5A00EAD44D /* TesseractFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCE8B79B1F819C5A00EAD44D /* TesseractFramework.framework */; };
+		FCE8B79D1F819CC200EAD44D /* TesseractFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FCE8B79B1F819C5A00EAD44D /* TesseractFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FCE8B79F1F819CD600EAD44D /* LeptonicaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCE8B79E1F819CD600EAD44D /* LeptonicaFramework.framework */; };
+		FCE8B7A01F819CDD00EAD44D /* LeptonicaFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FCE8B79E1F819CD600EAD44D /* LeptonicaFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FCE8B7A21F819CF500EAD44D /* UnixImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCE8B7A11F819CF500EAD44D /* UnixImageIO.framework */; };
+		FCE8B7A31F819CFA00EAD44D /* UnixImageIO.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FCE8B7A11F819CF500EAD44D /* UnixImageIO.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FCE8B7A51F819D0800EAD44D /* PROJ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCE8B7A41F819D0800EAD44D /* PROJ.framework */; };
+		FCE8B7A61F819D0F00EAD44D /* PROJ.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FCE8B7A41F819D0800EAD44D /* PROJ.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FCE8B7A81F819D1A00EAD44D /* FreeType.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCE8B7A71F819D1A00EAD44D /* FreeType.framework */; };
+		FCE8B7A91F819D2000EAD44D /* FreeType.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FCE8B7A71F819D1A00EAD44D /* FreeType.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FC2781891E9E8F9B001541AB /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = tessdata;
+			dstSubfolderSpec = 7;
+			files = (
+				FC3AE7CE1EBF3BEC00796404 /* eng.cube.bigrams in CopyFiles */,
+				FC3AE7CF1EBF3BEC00796404 /* eng.cube.fold in CopyFiles */,
+				FC3AE7D01EBF3BEC00796404 /* eng.cube.lm in CopyFiles */,
+				FC3AE7D11EBF3BEC00796404 /* eng.cube.nn in CopyFiles */,
+				FC3AE7D21EBF3BEC00796404 /* eng.cube.params in CopyFiles */,
+				FC3AE7D31EBF3BEC00796404 /* eng.cube.size in CopyFiles */,
+				FC3AE7D41EBF3BEC00796404 /* eng.cube.word-freq in CopyFiles */,
+				FC3AE7D51EBF3BEC00796404 /* eng.tesseract_cube.nn in CopyFiles */,
+				FC3AE7D61EBF3BEC00796404 /* eng.traineddata in CopyFiles */,
+				FC3AE7D71EBF3BEC00796404 /* inttemp in CopyFiles */,
+				FC3AE7D81EBF3BEC00796404 /* normproto in CopyFiles */,
+				FC3AE7D91EBF3BEC00796404 /* pfftable in CopyFiles */,
+				FC3AE7DA1EBF3BEC00796404 /* unicharset in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC2781971E9E9248001541AB /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FCE8B7A91F819D2000EAD44D /* FreeType.framework in CopyFiles */,
+				FCE8B7A61F819D0F00EAD44D /* PROJ.framework in CopyFiles */,
+				FCE8B7A31F819CFA00EAD44D /* UnixImageIO.framework in CopyFiles */,
+				FCE8B79D1F819CC200EAD44D /* TesseractFramework.framework in CopyFiles */,
+				FCE8B7A01F819CDD00EAD44D /* LeptonicaFramework.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		FC2780C61E9BD625001541AB /* NSScreen+PointConversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSScreen+PointConversion.h"; sourceTree = "<group>"; };
+		FC2780C71E9BD625001541AB /* NSScreen+PointConversion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSScreen+PointConversion.m"; sourceTree = "<group>"; };
+		FC2780CC1E9BDE27001541AB /* NSEvent+MouseClamped.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSEvent+MouseClamped.h"; path = "NSEvent/NSEvent+MouseClamped.h"; sourceTree = "<group>"; };
+		FC2780CD1E9BDE27001541AB /* NSEvent+MouseClamped.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSEvent+MouseClamped.m"; path = "NSEvent/NSEvent+MouseClamped.m"; sourceTree = "<group>"; };
+		FC2781601E9E8E91001541AB /* Tesseract.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tesseract.h; sourceTree = "<group>"; };
+		FC2781611E9E8E91001541AB /* Tesseract.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Tesseract.mm; sourceTree = "<group>"; };
+		FC2781A01E9FD544001541AB /* NSString+cleaning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+cleaning.h"; sourceTree = "<group>"; };
+		FC2781A11E9FD544001541AB /* NSString+cleaning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+cleaning.m"; sourceTree = "<group>"; };
+		FC2781A31EA10BEF001541AB /* PokerOdds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PokerOdds.h; sourceTree = "<group>"; };
+		FC2781A41EA10BEF001541AB /* PokerOdds.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PokerOdds.m; sourceTree = "<group>"; };
+		FC3A0A021E6F4473004A1994 /* pokerTHmap.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = pokerTHmap.plist; sourceTree = "<group>"; };
+		FC3A0A041E70A364004A1994 /* zyngaTable.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = zyngaTable.plist; sourceTree = "<group>"; };
+		FC3A0A0A1E719B6A004A1994 /* relativeZyngaDict.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = relativeZyngaDict.plist; path = ../../../../../../Desktop/pkr/images/relativeZyngaDict.plist; sourceTree = "<group>"; };
+		FC3A0A0C1E719D2B004A1994 /* StateMonitoringWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StateMonitoringWindow.h; sourceTree = "<group>"; };
+		FC3A0A0D1E719D2B004A1994 /* StateMonitoringWindow.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = StateMonitoringWindow.mm; sourceTree = "<group>"; };
+		FC3A0A0E1E719D2B004A1994 /* StateMonitoringWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StateMonitoringWindow.xib; sourceTree = "<group>"; };
+		FC3A0A121E71BD2E004A1994 /* chip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = chip.png; path = Images/Zynga/chip.png; sourceTree = "<group>"; };
+		FC3A0A141E71BD35004A1994 /* dealerChip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dealerChip.png; path = Images/Zynga/dealerChip.png; sourceTree = "<group>"; };
+		FC3AE7B41EBF3BCE00796404 /* eng.cube.bigrams */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = eng.cube.bigrams; sourceTree = "<group>"; };
+		FC3AE7B51EBF3BCE00796404 /* eng.cube.fold */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = eng.cube.fold; sourceTree = "<group>"; };
+		FC3AE7B61EBF3BCE00796404 /* eng.cube.lm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.lex; path = eng.cube.lm; sourceTree = "<group>"; };
+		FC3AE7B71EBF3BCE00796404 /* eng.cube.nn */ = {isa = PBXFileReference; lastKnownFileType = file; path = eng.cube.nn; sourceTree = "<group>"; };
+		FC3AE7B81EBF3BCE00796404 /* eng.cube.params */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = eng.cube.params; sourceTree = "<group>"; };
+		FC3AE7B91EBF3BCE00796404 /* eng.cube.size */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = eng.cube.size; sourceTree = "<group>"; };
+		FC3AE7BA1EBF3BCE00796404 /* eng.cube.word-freq */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "eng.cube.word-freq"; sourceTree = "<group>"; };
+		FC3AE7BB1EBF3BCE00796404 /* eng.tesseract_cube.nn */ = {isa = PBXFileReference; lastKnownFileType = file; path = eng.tesseract_cube.nn; sourceTree = "<group>"; };
+		FC3AE7BC1EBF3BCE00796404 /* eng.traineddata */ = {isa = PBXFileReference; lastKnownFileType = file; path = eng.traineddata; sourceTree = "<group>"; };
+		FC3AE7BD1EBF3BCE00796404 /* inttemp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = inttemp; sourceTree = "<group>"; };
+		FC3AE7BE1EBF3BCE00796404 /* normproto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = normproto; sourceTree = "<group>"; };
+		FC3AE7BF1EBF3BCE00796404 /* pfftable */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pfftable; sourceTree = "<group>"; };
+		FC3AE7C01EBF3BCE00796404 /* unicharset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = unicharset; sourceTree = "<group>"; };
+		FC65DD4E1E944C8200EDA21C /* ImageIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageIndex.h; sourceTree = "<group>"; };
+		FC65DD4F1E944C8200EDA21C /* ImageIndex.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ImageIndex.mm; sourceTree = "<group>"; };
+		FC8339681E6883F50072706B /* Universal Poker Bot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Universal Poker Bot.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC83396B1E6883F50072706B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FC83396C1E6883F50072706B /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
+		FC83396F1E6883F50072706B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FC8339711E6883F50072706B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FC8339741E6883F50072706B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		FC8339761E6883F50072706B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC8339881E6981D50072706B /* Adler-32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "Adler-32.c"; sourceTree = "<group>"; };
+		FC8339891E6981D50072706B /* Adler-32.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Adler-32.h"; sourceTree = "<group>"; };
+		FC83398B1E6981D50072706B /* gcd.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = gcd.c; sourceTree = "<group>"; };
+		FC83398C1E6981D50072706B /* gcd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gcd.h; sourceTree = "<group>"; };
+		FC83398D1E6981D50072706B /* lcm.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lcm.c; sourceTree = "<group>"; };
+		FC83398E1E6981D50072706B /* lcm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lcm.h; sourceTree = "<group>"; };
+		FC8339901E6981D50072706B /* NSData+Adler32.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Adler32.h"; sourceTree = "<group>"; };
+		FC8339911E6981D50072706B /* NSData+Adler32.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Adler32.m"; sourceTree = "<group>"; };
+		FC8339921E6981D50072706B /* NSData+Output.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Output.h"; sourceTree = "<group>"; };
+		FC8339931E6981D50072706B /* NSData+Output.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Output.m"; sourceTree = "<group>"; };
+		FC8339941E6981D50072706B /* NSData+stringAsBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+stringAsBase.h"; sourceTree = "<group>"; };
+		FC8339951E6981D50072706B /* NSData+stringAsBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+stringAsBase.m"; sourceTree = "<group>"; };
+		FC8339971E6981D50072706B /* NSString+Adler32.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Adler32.h"; sourceTree = "<group>"; };
+		FC8339981E6981D50072706B /* NSString+Adler32.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Adler32.m"; sourceTree = "<group>"; };
+		FC8339991E6981D50072706B /* NSString+stringAsBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+stringAsBase.h"; sourceTree = "<group>"; };
+		FC83399A1E6981D50072706B /* NSString+stringAsBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+stringAsBase.m"; sourceTree = "<group>"; };
+		FC83399B1E6981D50072706B /* NSString+stringAsReverseString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+stringAsReverseString.h"; sourceTree = "<group>"; };
+		FC83399C1E6981D50072706B /* NSString+stringAsReverseString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+stringAsReverseString.m"; sourceTree = "<group>"; };
+		FC83399E1E6981D50072706B /* BaseCharacters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCharacters.h; sourceTree = "<group>"; };
+		FC83399F1E6981D50072706B /* BaseCharacters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCharacters.m; sourceTree = "<group>"; };
+		FC8339A01E6981D50072706B /* swap.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = swap.c; sourceTree = "<group>"; };
+		FC8339A11E6981D50072706B /* swap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = swap.h; sourceTree = "<group>"; };
+		FC8339D21E69D8E50072706B /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		FC8339EA1E6D75020072706B /* NSImage+subImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSImage+subImage.h"; path = "NSImage/NSImage+subImage.h"; sourceTree = "<group>"; };
+		FC8339EB1E6D75020072706B /* NSImage+subImage.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "NSImage+subImage.mm"; path = "NSImage/NSImage+subImage.mm"; sourceTree = "<group>"; };
+		FCCEDBD61E8BDBA200E50654 /* Enums.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Enums.h; sourceTree = "<group>"; };
+		FCCEDC641E8FCC8500E50654 /* PokerPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PokerPlayer.h; sourceTree = "<group>"; };
+		FCCEDC651E8FCC8500E50654 /* PokerPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PokerPlayer.m; sourceTree = "<group>"; };
+		FCCEDC661E8FCC8500E50654 /* PokerTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PokerTable.h; sourceTree = "<group>"; };
+		FCCEDC671E8FCC8500E50654 /* PokerTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PokerTable.m; sourceTree = "<group>"; };
+		FCCEDC6E1E914E6600E50654 /* PlayingCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayingCard.h; sourceTree = "<group>"; };
+		FCCEDC6F1E914E6600E50654 /* PlayingCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayingCard.m; sourceTree = "<group>"; };
+		FCCEDC711E915B5300E50654 /* constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = "<group>"; };
+		FCE8B7601F819A5300EAD44D /* BotStateDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BotStateDelegate.h; path = "Helper Classes/State Delegates/BotStateDelegate.h"; sourceTree = "<group>"; };
+		FCE8B7611F819A5300EAD44D /* BotStateDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = BotStateDelegate.m; path = "Helper Classes/State Delegates/BotStateDelegate.m"; sourceTree = "<group>"; };
+		FCE8B7631F819A8200EAD44D /* PokerChoice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = PokerChoice.m; path = "Helper Classes/PokerChoice.m"; sourceTree = "<group>"; };
+		FCE8B7641F819A8200EAD44D /* PokerChoice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PokerChoice.h; path = "Helper Classes/PokerChoice.h"; sourceTree = "<group>"; };
+		FCE8B7651F819A8200EAD44D /* NumbersHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NumbersHelper.h; path = "Helper Classes/NumbersHelper.h"; sourceTree = "<group>"; };
+		FCE8B7661F819A8200EAD44D /* PokerLogger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = PokerLogger.m; path = "Helper Classes/PokerLogger.m"; sourceTree = "<group>"; };
+		FCE8B7671F819A8200EAD44D /* PokerLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PokerLogger.h; path = "Helper Classes/PokerLogger.h"; sourceTree = "<group>"; };
+		FCE8B7681F819A8200EAD44D /* PokerManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = PokerManager.m; path = "Helper Classes/PokerManager.m"; sourceTree = "<group>"; };
+		FCE8B7691F819A8300EAD44D /* NumbersHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = NumbersHelper.m; path = "Helper Classes/NumbersHelper.m"; sourceTree = "<group>"; };
+		FCE8B76A1F819A8300EAD44D /* PokerManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PokerManager.h; path = "Helper Classes/PokerManager.h"; sourceTree = "<group>"; };
+		FCE8B76B1F819A8300EAD44D /* CHCSVParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CHCSVParser.h; path = "Helper Classes/CHCSVParser.h"; sourceTree = "<group>"; };
+		FCE8B76C1F819A8300EAD44D /* CHCSVParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CHCSVParser.m; path = "Helper Classes/CHCSVParser.m"; sourceTree = "<group>"; };
+		FCE8B7721F819AF100EAD44D /* ExternalWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ExternalWindow.m; path = "External Window/ExternalWindow.m"; sourceTree = "<group>"; };
+		FCE8B7731F819AF100EAD44D /* ImageSection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ImageSection.h; path = "External Window/ImageSection.h"; sourceTree = "<group>"; };
+		FCE8B7741F819AF100EAD44D /* CoordinatesManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CoordinatesManager.h; path = "External Window/CoordinatesManager.h"; sourceTree = "<group>"; };
+		FCE8B7751F819AF200EAD44D /* CoordinatesManager.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = CoordinatesManager.mm; path = "External Window/CoordinatesManager.mm"; sourceTree = "<group>"; };
+		FCE8B7761F819AF200EAD44D /* ExternalWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ExternalWindow.h; path = "External Window/ExternalWindow.h"; sourceTree = "<group>"; };
+		FCE8B7771F819AF200EAD44D /* ImageSection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ImageSection.m; path = "External Window/ImageSection.m"; sourceTree = "<group>"; };
+		FCE8B77B1F819B1700EAD44D /* POdds.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = POdds.m; path = "Universal Poker Bot/Poker Math/POdds/POdds.m"; sourceTree = SOURCE_ROOT; };
+		FCE8B77C1F819B1700EAD44D /* POdds.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = POdds.h; path = "Universal Poker Bot/Poker Math/POdds/POdds.h"; sourceTree = SOURCE_ROOT; };
+		FCE8B77D1F819B1700EAD44D /* xorshift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = xorshift.h; path = "Universal Poker Bot/Poker Math/POdds/xorshift.h"; sourceTree = SOURCE_ROOT; };
+		FCE8B77E1F819B1700EAD44D /* podds */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = podds; path = "Universal Poker Bot/Poker Math/POdds/podds"; sourceTree = SOURCE_ROOT; };
+		FCE8B77F1F819B1700EAD44D /* poker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = poker.h; path = "Universal Poker Bot/Poker Math/POdds/poker.h"; sourceTree = SOURCE_ROOT; };
+		FCE8B7801F819B1700EAD44D /* xorshift.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = xorshift.c; path = "Universal Poker Bot/Poker Math/POdds/xorshift.c"; sourceTree = SOURCE_ROOT; };
+		FCE8B7811F819B1700EAD44D /* poddsold */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = poddsold; path = "Universal Poker Bot/Poker Math/POdds/poddsold"; sourceTree = SOURCE_ROOT; };
+		FCE8B7821F819B1700EAD44D /* poker.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = poker.c; path = "Universal Poker Bot/Poker Math/POdds/poker.c"; sourceTree = SOURCE_ROOT; };
+		FCE8B7861F819B5C00EAD44D /* MagicNumbers.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = MagicNumbers.cpp; path = Deprecated/Deps/MagicNumbers.cpp; sourceTree = "<group>"; };
+		FCE8B7871F819B5C00EAD44D /* structs_defines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = structs_defines.h; path = Deprecated/Deps/structs_defines.h; sourceTree = "<group>"; };
+		FCE8B7881F819B5C00EAD44D /* MagicNumbers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MagicNumbers.h; path = Deprecated/Deps/MagicNumbers.h; sourceTree = "<group>"; };
+		FCE8B7891F819B5C00EAD44D /* pic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = pic.h; path = Deprecated/Deps/pic.h; sourceTree = "<group>"; };
+		FCE8B78B1F819B6400EAD44D /* template.tm */ = {isa = PBXFileReference; lastKnownFileType = text; name = template.tm; path = Deprecated/Maps/template.tm; sourceTree = "<group>"; };
+		FCE8B78C1F819B6400EAD44D /* PokerTH.tm */ = {isa = PBXFileReference; lastKnownFileType = text; name = PokerTH.tm; path = Deprecated/Maps/PokerTH.tm; sourceTree = "<group>"; };
+		FCE8B78D1F819B9E00EAD44D /* CVHelper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = CVHelper.mm; path = CVClasses/CVHelper.mm; sourceTree = "<group>"; };
+		FCE8B78E1F819B9E00EAD44D /* CVSearchHelper.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = CVSearchHelper.hpp; path = CVClasses/CVSearchHelper.hpp; sourceTree = "<group>"; };
+		FCE8B78F1F819B9E00EAD44D /* CVHelper.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = CVHelper.hpp; path = CVClasses/CVHelper.hpp; sourceTree = "<group>"; };
+		FCE8B7901F819B9E00EAD44D /* CVSearchHelper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = CVSearchHelper.mm; path = CVClasses/CVSearchHelper.mm; sourceTree = "<group>"; };
+		FCE8B7931F819BAA00EAD44D /* newTablePlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = newTablePlay.png; path = Images/newTablePlay.png; sourceTree = "<group>"; };
+		FCE8B7941F819BB100EAD44D /* findMe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = findMe.png; path = Images/findMe.png; sourceTree = "<group>"; };
+		FCE8B7951F819BDA00EAD44D /* buttonToLobby.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = buttonToLobby.png; path = Images/buttonToLobby.png; sourceTree = "<group>"; };
+		FCE8B7961F819BDA00EAD44D /* buttonStandUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = buttonStandUp.png; path = Images/buttonStandUp.png; sourceTree = "<group>"; };
+		FCE8B7971F819BDA00EAD44D /* buttonChatSend.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = buttonChatSend.png; path = Images/buttonChatSend.png; sourceTree = "<group>"; };
+		FCE8B7981F819BDA00EAD44D /* buttonNewTable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = buttonNewTable.png; path = Images/buttonNewTable.png; sourceTree = "<group>"; };
+		FCE8B7991F819BE400EAD44D /* foldActive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = foldActive.png; path = Images/foldActive.png; sourceTree = "<group>"; };
+		FCE8B79B1F819C5A00EAD44D /* TesseractFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TesseractFramework.framework; path = Frameworks/TesseractFramework.framework; sourceTree = "<group>"; };
+		FCE8B79E1F819CD600EAD44D /* LeptonicaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LeptonicaFramework.framework; path = Frameworks/LeptonicaFramework.framework; sourceTree = "<group>"; };
+		FCE8B7A11F819CF500EAD44D /* UnixImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UnixImageIO.framework; path = Frameworks/UnixImageIO.framework; sourceTree = "<group>"; };
+		FCE8B7A41F819D0800EAD44D /* PROJ.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PROJ.framework; path = Frameworks/PROJ.framework; sourceTree = "<group>"; };
+		FCE8B7A71F819D1A00EAD44D /* FreeType.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FreeType.framework; path = Frameworks/FreeType.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FC8339651E6883F50072706B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCE8B7A81F819D1A00EAD44D /* FreeType.framework in Frameworks */,
+				FCE8B7A51F819D0800EAD44D /* PROJ.framework in Frameworks */,
+				FCE8B7A21F819CF500EAD44D /* UnixImageIO.framework in Frameworks */,
+				FCE8B79C1F819C5A00EAD44D /* TesseractFramework.framework in Frameworks */,
+				FCE8B79F1F819CD600EAD44D /* LeptonicaFramework.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FC2780A51E96D0A4001541AB /* External Window */ = {
+			isa = PBXGroup;
+			children = (
+				FCE8B7741F819AF100EAD44D /* CoordinatesManager.h */,
+				FCE8B7751F819AF200EAD44D /* CoordinatesManager.mm */,
+				FCE8B7761F819AF200EAD44D /* ExternalWindow.h */,
+				FCE8B7721F819AF100EAD44D /* ExternalWindow.m */,
+				FCE8B7731F819AF100EAD44D /* ImageSection.h */,
+				FCE8B7771F819AF200EAD44D /* ImageSection.m */,
+				FC8339ED1E6D85CB0072706B /* TableMap */,
+				FC65DD4D1E944C7A00EDA21C /* Recognition */,
+			);
+			name = "External Window";
+			sourceTree = "<group>";
+		};
+		FC2780CB1E9BDE0F001541AB /* NSEvent */ = {
+			isa = PBXGroup;
+			children = (
+				FC2780CC1E9BDE27001541AB /* NSEvent+MouseClamped.h */,
+				FC2780CD1E9BDE27001541AB /* NSEvent+MouseClamped.m */,
+			);
+			name = NSEvent;
+			sourceTree = "<group>";
+		};
+		FC27816E1E9E8F80001541AB /* tessdata */ = {
+			isa = PBXGroup;
+			children = (
+				FC3AE7B41EBF3BCE00796404 /* eng.cube.bigrams */,
+				FC3AE7B51EBF3BCE00796404 /* eng.cube.fold */,
+				FC3AE7B61EBF3BCE00796404 /* eng.cube.lm */,
+				FC3AE7B71EBF3BCE00796404 /* eng.cube.nn */,
+				FC3AE7B81EBF3BCE00796404 /* eng.cube.params */,
+				FC3AE7B91EBF3BCE00796404 /* eng.cube.size */,
+				FC3AE7BA1EBF3BCE00796404 /* eng.cube.word-freq */,
+				FC3AE7BB1EBF3BCE00796404 /* eng.tesseract_cube.nn */,
+				FC3AE7BC1EBF3BCE00796404 /* eng.traineddata */,
+				FC3AE7BD1EBF3BCE00796404 /* inttemp */,
+				FC3AE7BE1EBF3BCE00796404 /* normproto */,
+				FC3AE7BF1EBF3BCE00796404 /* pfftable */,
+				FC3AE7C01EBF3BCE00796404 /* unicharset */,
+			);
+			path = tessdata;
+			sourceTree = "<group>";
+		};
+		FC3A0A111E71BCFC004A1994 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				FCE8B7931F819BAA00EAD44D /* newTablePlay.png */,
+				FCE8B7941F819BB100EAD44D /* findMe.png */,
+				FC3A0A121E71BD2E004A1994 /* chip.png */,
+				FC3A0A141E71BD35004A1994 /* dealerChip.png */,
+				FCE8B7971F819BDA00EAD44D /* buttonChatSend.png */,
+				FCE8B7981F819BDA00EAD44D /* buttonNewTable.png */,
+				FCE8B7961F819BDA00EAD44D /* buttonStandUp.png */,
+				FCE8B7951F819BDA00EAD44D /* buttonToLobby.png */,
+				FCE8B7991F819BE400EAD44D /* foldActive.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		FC3AE8921EC202ED00796404 /* StateDelegates */ = {
+			isa = PBXGroup;
+			children = (
+				FCE8B7601F819A5300EAD44D /* BotStateDelegate.h */,
+				FCE8B7611F819A5300EAD44D /* BotStateDelegate.m */,
+			);
+			name = StateDelegates;
+			sourceTree = "<group>";
+		};
+		FC65DD4D1E944C7A00EDA21C /* Recognition */ = {
+			isa = PBXGroup;
+			children = (
+				FC27816E1E9E8F80001541AB /* tessdata */,
+				FC2781601E9E8E91001541AB /* Tesseract.h */,
+				FC2781611E9E8E91001541AB /* Tesseract.mm */,
+				FC65DD4E1E944C8200EDA21C /* ImageIndex.h */,
+				FC65DD4F1E944C8200EDA21C /* ImageIndex.mm */,
+			);
+			name = Recognition;
+			sourceTree = "<group>";
+		};
+		FC7E1A0E1EA77C16007343D7 /* Helper Classes */ = {
+			isa = PBXGroup;
+			children = (
+				FCE8B76B1F819A8300EAD44D /* CHCSVParser.h */,
+				FCE8B76C1F819A8300EAD44D /* CHCSVParser.m */,
+				FCE8B7651F819A8200EAD44D /* NumbersHelper.h */,
+				FCE8B7691F819A8300EAD44D /* NumbersHelper.m */,
+				FCE8B7641F819A8200EAD44D /* PokerChoice.h */,
+				FCE8B7631F819A8200EAD44D /* PokerChoice.m */,
+				FCE8B7671F819A8200EAD44D /* PokerLogger.h */,
+				FCE8B7661F819A8200EAD44D /* PokerLogger.m */,
+				FCE8B76A1F819A8300EAD44D /* PokerManager.h */,
+				FCE8B7681F819A8200EAD44D /* PokerManager.m */,
+				FC3AE8921EC202ED00796404 /* StateDelegates */,
+			);
+			name = "Helper Classes";
+			sourceTree = "<group>";
+		};
+		FC83395F1E6883F50072706B = {
+			isa = PBXGroup;
+			children = (
+				FC83396A1E6883F50072706B /* Universal Poker Bot */,
+				FC8339691E6883F50072706B /* Products */,
+				FC8339C91E69D8970072706B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FC8339691E6883F50072706B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FC8339681E6883F50072706B /* Universal Poker Bot.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FC83396A1E6883F50072706B /* Universal Poker Bot */ = {
+			isa = PBXGroup;
+			children = (
+				FC7E1A0E1EA77C16007343D7 /* Helper Classes */,
+				FCCEDC611E8FCC8500E50654 /* Storage Models */,
+				FC2780A51E96D0A4001541AB /* External Window */,
+				FCA15E2E1E92AC75000A8C60 /* Poker Math */,
+				FCCEDBD41E8BD4BF00E50654 /* Deprecated */,
+				FCCEDBD01E8BD14A00E50654 /* CVClasses */,
+				FC3A0A111E71BCFC004A1994 /* Images */,
+				FCCEDBD61E8BDBA200E50654 /* Enums.h */,
+				FCCEDC711E915B5300E50654 /* constants.h */,
+				FC3A0A0C1E719D2B004A1994 /* StateMonitoringWindow.h */,
+				FC3A0A0D1E719D2B004A1994 /* StateMonitoringWindow.mm */,
+				FC3A0A0E1E719D2B004A1994 /* StateMonitoringWindow.xib */,
+				FC8339861E6981D50072706B /* Deps */,
+				FC83396B1E6883F50072706B /* AppDelegate.h */,
+				FC83396C1E6883F50072706B /* AppDelegate.mm */,
+				FC8339711E6883F50072706B /* Assets.xcassets */,
+				FC8339731E6883F50072706B /* MainMenu.xib */,
+				FC8339761E6883F50072706B /* Info.plist */,
+				FC83396E1E6883F50072706B /* Supporting Files */,
+				FC8339D21E69D8E50072706B /* PrefixHeader.pch */,
+			);
+			path = "Universal Poker Bot";
+			sourceTree = "<group>";
+		};
+		FC83396E1E6883F50072706B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FC83396F1E6883F50072706B /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FC8339861E6981D50072706B /* Deps */ = {
+			isa = PBXGroup;
+			children = (
+				FC2780CB1E9BDE0F001541AB /* NSEvent */,
+				FC8339871E6981D50072706B /* Checksum */,
+				FC83398A1E6981D50072706B /* Math */,
+				FC8339E91E6D74CB0072706B /* NSImage */,
+				FC83398F1E6981D50072706B /* NSData */,
+				FC8339961E6981D50072706B /* NSString */,
+				FC83399D1E6981D50072706B /* Util */,
+			);
+			path = Deps;
+			sourceTree = "<group>";
+		};
+		FC8339871E6981D50072706B /* Checksum */ = {
+			isa = PBXGroup;
+			children = (
+				FC8339881E6981D50072706B /* Adler-32.c */,
+				FC8339891E6981D50072706B /* Adler-32.h */,
+			);
+			path = Checksum;
+			sourceTree = "<group>";
+		};
+		FC83398A1E6981D50072706B /* Math */ = {
+			isa = PBXGroup;
+			children = (
+				FC2780C61E9BD625001541AB /* NSScreen+PointConversion.h */,
+				FC2780C71E9BD625001541AB /* NSScreen+PointConversion.m */,
+				FC83398B1E6981D50072706B /* gcd.c */,
+				FC83398C1E6981D50072706B /* gcd.h */,
+				FC83398D1E6981D50072706B /* lcm.c */,
+				FC83398E1E6981D50072706B /* lcm.h */,
+			);
+			path = Math;
+			sourceTree = "<group>";
+		};
+		FC83398F1E6981D50072706B /* NSData */ = {
+			isa = PBXGroup;
+			children = (
+				FC8339901E6981D50072706B /* NSData+Adler32.h */,
+				FC8339911E6981D50072706B /* NSData+Adler32.m */,
+				FC8339921E6981D50072706B /* NSData+Output.h */,
+				FC8339931E6981D50072706B /* NSData+Output.m */,
+				FC8339941E6981D50072706B /* NSData+stringAsBase.h */,
+				FC8339951E6981D50072706B /* NSData+stringAsBase.m */,
+			);
+			path = NSData;
+			sourceTree = "<group>";
+		};
+		FC8339961E6981D50072706B /* NSString */ = {
+			isa = PBXGroup;
+			children = (
+				FC8339971E6981D50072706B /* NSString+Adler32.h */,
+				FC8339981E6981D50072706B /* NSString+Adler32.m */,
+				FC8339991E6981D50072706B /* NSString+stringAsBase.h */,
+				FC83399A1E6981D50072706B /* NSString+stringAsBase.m */,
+				FC83399B1E6981D50072706B /* NSString+stringAsReverseString.h */,
+				FC83399C1E6981D50072706B /* NSString+stringAsReverseString.m */,
+				FC2781A01E9FD544001541AB /* NSString+cleaning.h */,
+				FC2781A11E9FD544001541AB /* NSString+cleaning.m */,
+			);
+			path = NSString;
+			sourceTree = "<group>";
+		};
+		FC83399D1E6981D50072706B /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				FC83399E1E6981D50072706B /* BaseCharacters.h */,
+				FC83399F1E6981D50072706B /* BaseCharacters.m */,
+				FC8339A01E6981D50072706B /* swap.c */,
+				FC8339A11E6981D50072706B /* swap.h */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		FC8339C91E69D8970072706B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FCE8B7A71F819D1A00EAD44D /* FreeType.framework */,
+				FCE8B7A41F819D0800EAD44D /* PROJ.framework */,
+				FCE8B7A11F819CF500EAD44D /* UnixImageIO.framework */,
+				FCE8B79E1F819CD600EAD44D /* LeptonicaFramework.framework */,
+				FCE8B79B1F819C5A00EAD44D /* TesseractFramework.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FC8339E91E6D74CB0072706B /* NSImage */ = {
+			isa = PBXGroup;
+			children = (
+				FC8339EA1E6D75020072706B /* NSImage+subImage.h */,
+				FC8339EB1E6D75020072706B /* NSImage+subImage.mm */,
+			);
+			name = NSImage;
+			sourceTree = "<group>";
+		};
+		FC8339ED1E6D85CB0072706B /* TableMap */ = {
+			isa = PBXGroup;
+			children = (
+				FC3A0A0A1E719B6A004A1994 /* relativeZyngaDict.plist */,
+				FC3A0A041E70A364004A1994 /* zyngaTable.plist */,
+				FC3A0A021E6F4473004A1994 /* pokerTHmap.plist */,
+			);
+			name = TableMap;
+			sourceTree = "<group>";
+		};
+		FC833A281E6D91C70072706B /* Maps */ = {
+			isa = PBXGroup;
+			children = (
+				FCE8B78C1F819B6400EAD44D /* PokerTH.tm */,
+				FCE8B78B1F819B6400EAD44D /* template.tm */,
+			);
+			name = Maps;
+			sourceTree = "<group>";
+		};
+		FC833A291E6D91CC0072706B /* Deps */ = {
+			isa = PBXGroup;
+			children = (
+				FCE8B7861F819B5C00EAD44D /* MagicNumbers.cpp */,
+				FCE8B7881F819B5C00EAD44D /* MagicNumbers.h */,
+				FCE8B7891F819B5C00EAD44D /* pic.h */,
+				FCE8B7871F819B5C00EAD44D /* structs_defines.h */,
+			);
+			name = Deps;
+			sourceTree = "<group>";
+		};
+		FCA15E2E1E92AC75000A8C60 /* Poker Math */ = {
+			isa = PBXGroup;
+			children = (
+				FCA15E2F1E92AC7F000A8C60 /* POdds */,
+			);
+			name = "Poker Math";
+			sourceTree = "<group>";
+		};
+		FCA15E2F1E92AC7F000A8C60 /* POdds */ = {
+			isa = PBXGroup;
+			children = (
+				FCE8B77E1F819B1700EAD44D /* podds */,
+				FCE8B77C1F819B1700EAD44D /* POdds.h */,
+				FCE8B77B1F819B1700EAD44D /* POdds.m */,
+				FCE8B7811F819B1700EAD44D /* poddsold */,
+				FCE8B7821F819B1700EAD44D /* poker.c */,
+				FCE8B77F1F819B1700EAD44D /* poker.h */,
+				FCE8B7801F819B1700EAD44D /* xorshift.c */,
+				FCE8B77D1F819B1700EAD44D /* xorshift.h */,
+			);
+			path = POdds;
+			sourceTree = "<group>";
+		};
+		FCCEDBD01E8BD14A00E50654 /* CVClasses */ = {
+			isa = PBXGroup;
+			children = (
+				FCE8B78F1F819B9E00EAD44D /* CVHelper.hpp */,
+				FCE8B78D1F819B9E00EAD44D /* CVHelper.mm */,
+				FCE8B78E1F819B9E00EAD44D /* CVSearchHelper.hpp */,
+				FCE8B7901F819B9E00EAD44D /* CVSearchHelper.mm */,
+			);
+			name = CVClasses;
+			sourceTree = "<group>";
+		};
+		FCCEDBD41E8BD4BF00E50654 /* Deprecated */ = {
+			isa = PBXGroup;
+			children = (
+				FC833A291E6D91CC0072706B /* Deps */,
+				FC833A281E6D91C70072706B /* Maps */,
+			);
+			name = Deprecated;
+			sourceTree = "<group>";
+		};
+		FCCEDC611E8FCC8500E50654 /* Storage Models */ = {
+			isa = PBXGroup;
+			children = (
+				FCCEDC661E8FCC8500E50654 /* PokerTable.h */,
+				FCCEDC671E8FCC8500E50654 /* PokerTable.m */,
+				FCCEDC641E8FCC8500E50654 /* PokerPlayer.h */,
+				FCCEDC651E8FCC8500E50654 /* PokerPlayer.m */,
+				FCCEDC6E1E914E6600E50654 /* PlayingCard.h */,
+				FCCEDC6F1E914E6600E50654 /* PlayingCard.m */,
+				FC2781A31EA10BEF001541AB /* PokerOdds.h */,
+				FC2781A41EA10BEF001541AB /* PokerOdds.m */,
+			);
+			path = "Storage Models";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FC8339671E6883F50072706B /* Universal Poker Bot */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC8339791E6883F50072706B /* Build configuration list for PBXNativeTarget "Universal Poker Bot" */;
+			buildPhases = (
+				FC8339641E6883F50072706B /* Sources */,
+				FC27816D1E9E8F19001541AB /* ShellScript */,
+				FC8339651E6883F50072706B /* Frameworks */,
+				FC8339661E6883F50072706B /* Resources */,
+				FC2781891E9E8F9B001541AB /* CopyFiles */,
+				FC2781971E9E9248001541AB /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Universal Poker Bot";
+			productName = ImageExperiments;
+			productReference = FC8339681E6883F50072706B /* Universal Poker Bot.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FC8339601E6883F50072706B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = TGS;
+				TargetAttributes = {
+					FC8339671E6883F50072706B = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = FC8339631E6883F50072706B /* Build configuration list for PBXProject "Universal Poker Bot" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FC83395F1E6883F50072706B;
+			productRefGroup = FC8339691E6883F50072706B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FC8339671E6883F50072706B /* Universal Poker Bot */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FC8339661E6883F50072706B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC8339721E6883F50072706B /* Assets.xcassets in Resources */,
+				FC3A0A101E719D2B004A1994 /* StateMonitoringWindow.xib in Resources */,
+				FC3A0A151E71BD35004A1994 /* dealerChip.png in Resources */,
+				FC3A0A131E71BD2E004A1994 /* chip.png in Resources */,
+				FC8339751E6883F50072706B /* MainMenu.xib in Resources */,
+				FC3A0A051E70A364004A1994 /* zyngaTable.plist in Resources */,
+				FC3A0A0B1E719B6A004A1994 /* relativeZyngaDict.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FC27816D1E9E8F19001541AB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#install_name_tool -id @executable_path/../Frameworks/FreeType.framework/FreeType $SRCROOT/FreeType.framework/FreeType\n#install_name_tool -id @executable_path/../Frameworks/UnixImageIO.framework/UnixImageIO $SRCROOT/UnixImageIO.framework/UnixImageIO\n#install_name_tool -change /Library/Frameworks/PROJ.framework/Versions/4/PROJ @executable_path/../Frameworks/PROJ.framework/PROJ $SRCROOT/UnixImageIO.framework/UnixImageIO\n#install_name_tool -id @executable_path/../Frameworks/TesseractFramework.framework/TesseractFramework $SRCROOT/TesseractFramework.framework/TesseractFramework\n#install_name_tool -id @executable_path/../Frameworks/LeptonicaFramework.framework/LeptonicaFramework $SRCROOT/LeptonicaFramework.framework/LeptonicaFramework\n#install_name_tool -id @executable_path/../Frameworks/PROJ.framework/PROJ $SRCROOT/PROJ.framework/PROJ";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FC8339641E6883F50072706B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC8339AC1E6981D50072706B /* swap.c in Sources */,
+				FC8339A51E6981D50072706B /* NSData+Adler32.m in Sources */,
+				FC2781A21E9FD544001541AB /* NSString+cleaning.m in Sources */,
+				FC8339EC1E6D75020072706B /* NSImage+subImage.mm in Sources */,
+				FCE8B7841F819B1700EAD44D /* xorshift.c in Sources */,
+				FC8339A31E6981D50072706B /* gcd.c in Sources */,
+				FC8339A41E6981D50072706B /* lcm.c in Sources */,
+				FCE8B7701F819A8300EAD44D /* NumbersHelper.m in Sources */,
+				FCE8B7921F819B9E00EAD44D /* CVSearchHelper.mm in Sources */,
+				FCE8B7711F819A8300EAD44D /* CHCSVParser.m in Sources */,
+				FCE8B77A1F819AF200EAD44D /* ImageSection.m in Sources */,
+				FC2780CE1E9BDE27001541AB /* NSEvent+MouseClamped.m in Sources */,
+				FCE8B78A1F819B5C00EAD44D /* MagicNumbers.cpp in Sources */,
+				FC2781A51EA10BEF001541AB /* PokerOdds.m in Sources */,
+				FC8339701E6883F50072706B /* main.m in Sources */,
+				FCCEDC701E914E6600E50654 /* PlayingCard.m in Sources */,
+				FC8339A71E6981D50072706B /* NSData+stringAsBase.m in Sources */,
+				FCE8B76F1F819A8300EAD44D /* PokerManager.m in Sources */,
+				FCE8B7781F819AF200EAD44D /* ExternalWindow.m in Sources */,
+				FC2780C81E9BD625001541AB /* NSScreen+PointConversion.m in Sources */,
+				FC8339A61E6981D50072706B /* NSData+Output.m in Sources */,
+				FCCEDC691E8FCC8600E50654 /* PokerPlayer.m in Sources */,
+				FC8339A21E6981D50072706B /* Adler-32.c in Sources */,
+				FC83396D1E6883F50072706B /* AppDelegate.mm in Sources */,
+				FCE8B76D1F819A8300EAD44D /* PokerChoice.m in Sources */,
+				FC8339AA1E6981D50072706B /* NSString+stringAsReverseString.m in Sources */,
+				FCE8B7621F819A5300EAD44D /* BotStateDelegate.m in Sources */,
+				FCE8B7911F819B9E00EAD44D /* CVHelper.mm in Sources */,
+				FCE8B7791F819AF200EAD44D /* CoordinatesManager.mm in Sources */,
+				FC2781621E9E8E91001541AB /* Tesseract.mm in Sources */,
+				FC8339A81E6981D50072706B /* NSString+Adler32.m in Sources */,
+				FC65DD501E944C8200EDA21C /* ImageIndex.mm in Sources */,
+				FCE8B76E1F819A8300EAD44D /* PokerLogger.m in Sources */,
+				FC8339AB1E6981D50072706B /* BaseCharacters.m in Sources */,
+				FCE8B7831F819B1700EAD44D /* POdds.m in Sources */,
+				FCCEDC6A1E8FCC8600E50654 /* PokerTable.m in Sources */,
+				FCE8B7851F819B1700EAD44D /* poker.c in Sources */,
+				FC3A0A0F1E719D2B004A1994 /* StateMonitoringWindow.mm in Sources */,
+				FC8339A91E6981D50072706B /* NSString+stringAsBase.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FC8339731E6883F50072706B /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FC8339741E6883F50072706B /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FC8339771E6883F50072706B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		FC8339781E6883F50072706B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		FC83397A1E6883F50072706B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Universal Poker Bot/PrefixHeader.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				INFOPLIST_FILE = "Universal Poker Bot/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/lib,
+					/usr/local/Cellar/opencv/3.2.0/lib,
+					/usr/local/Cellar/jpeg/9b/lib,
+				);
+				OTHER_LDFLAGS = (
+					"-lopencv_calib3d",
+					"-lopencv_core",
+					"-lopencv_features2d",
+					"-lopencv_flann",
+					"-lopencv_highgui",
+					"-lopencv_imgcodecs",
+					"-lopencv_imgproc",
+					"-lopencv_ml",
+					"-lopencv_objdetect",
+					"-lopencv_photo",
+					"-lopencv_shape",
+					"-lopencv_stitching",
+					"-lopencv_superres",
+					"-lopencv_video",
+					"-lopencv_videoio",
+					"-lopencv_videostab",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tgs.UniversalPokerBot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FC83397B1E6883F50072706B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Universal Poker Bot/PrefixHeader.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				INFOPLIST_FILE = "Universal Poker Bot/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/lib,
+					/usr/local/Cellar/opencv/3.2.0/lib,
+					/usr/local/Cellar/jpeg/9b/lib,
+				);
+				OTHER_LDFLAGS = (
+					"-lopencv_calib3d",
+					"-lopencv_core",
+					"-lopencv_features2d",
+					"-lopencv_flann",
+					"-lopencv_highgui",
+					"-lopencv_imgcodecs",
+					"-lopencv_imgproc",
+					"-lopencv_ml",
+					"-lopencv_objdetect",
+					"-lopencv_photo",
+					"-lopencv_shape",
+					"-lopencv_stitching",
+					"-lopencv_superres",
+					"-lopencv_video",
+					"-lopencv_videoio",
+					"-lopencv_videostab",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tgs.UniversalPokerBot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FC8339631E6883F50072706B /* Build configuration list for PBXProject "Universal Poker Bot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC8339771E6883F50072706B /* Debug */,
+				FC8339781E6883F50072706B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FC8339791E6883F50072706B /* Build configuration list for PBXNativeTarget "Universal Poker Bot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC83397A1E6883F50072706B /* Debug */,
+				FC83397B1E6883F50072706B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FC8339601E6883F50072706B /* Project object */;
+}

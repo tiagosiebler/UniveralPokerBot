@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>coordinates</key>
+	<dict>
+		<key>tableCard1</key>
+		<dict>
+			<key>position</key>
+			<string>792×386</string>
+			<key>size</key>
+			<string>31x99</string>
+			<key>length</key>
+			<string>105</string>
+		</dict>
+		<key>tableCard2</key>
+		<dict>
+			<key>position</key>
+			<string>902×386</string>
+			<key>size</key>
+			<string>31x99</string>
+			<key>length</key>
+			<string>105</string>
+		</dict>
+		<key>tableCard3</key>
+		<dict>
+			<key>position</key>
+			<string>1012×386</string>
+			<key>size</key>
+			<string>31x99</string>
+			<key>length</key>
+			<string>107</string>
+		</dict>
+		<key>tableCard4</key>
+		<dict>
+			<key>position</key>
+			<string>1122×386</string>
+			<key>size</key>
+			<string>31x99</string>
+			<key>length</key>
+			<string>108</string>
+		</dict>
+		<key>tableCard5</key>
+		<dict>
+			<key>position</key>
+			<string>1232×386</string>
+			<key>size</key>
+			<string>31x99</string>
+			<key>length</key>
+			<string>108</string>
+		</dict>
+	</dict>
+</dict>
+</plist>
