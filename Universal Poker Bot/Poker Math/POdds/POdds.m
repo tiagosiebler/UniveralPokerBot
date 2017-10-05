@@ -172,7 +172,20 @@ void * simulator(void * v) {
     task.launchPath = [[NSBundle mainBundle] pathForResource:@"podds" ofType:nil];
     task.arguments = params;
     task.standardOutput = pipe;
-    
+    /*
+     
+     When "podds" isn't found in main bundle. Should probably have a harder error when that's the case...
+     
+     2017-10-05 23:03:02.890814+0100 Universal Poker Bot[4276:11907769] [General] must provide a launch path
+     2017-10-05 23:03:02.891796+0100 Universal Poker Bot[4276:11907769] [General] (
+     0   CoreFoundation                      0x00007fff500ce0fb __exceptionPreprocess + 171
+     1   libobjc.A.dylib                     0x00007fff769bac76 objc_exception_throw + 48
+     2   CoreFoundation                      0x00007fff5015fbfd +[NSException raise:format:] + 205
+     3   Foundation                          0x00007fff52188a55 COPY_SETTER_IMPL + 145
+     
+     ?
+     
+     */
     
     //NSLog(@"calling task: \n\n%@ %@",task.launchPath, cards);
     

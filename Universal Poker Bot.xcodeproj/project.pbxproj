@@ -48,6 +48,9 @@
 		FC8339AB1E6981D50072706B /* BaseCharacters.m in Sources */ = {isa = PBXBuildFile; fileRef = FC83399F1E6981D50072706B /* BaseCharacters.m */; };
 		FC8339AC1E6981D50072706B /* swap.c in Sources */ = {isa = PBXBuildFile; fileRef = FC8339A01E6981D50072706B /* swap.c */; };
 		FC8339EC1E6D75020072706B /* NSImage+subImage.mm in Sources */ = {isa = PBXBuildFile; fileRef = FC8339EB1E6D75020072706B /* NSImage+subImage.mm */; };
+		FC9ED96C1F86E42500FD28AD /* podds in Resources */ = {isa = PBXBuildFile; fileRef = FC9ED9641F86E41A00FD28AD /* podds */; };
+		FC9ED96D1F86E44B00FD28AD /* POdds.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9ED9661F86E41A00FD28AD /* POdds.m */; };
+		FC9ED96E1F86E44F00FD28AD /* poker.c in Sources */ = {isa = PBXBuildFile; fileRef = FC9ED9671F86E41A00FD28AD /* poker.c */; };
 		FCCEDC691E8FCC8600E50654 /* PokerPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCEDC651E8FCC8500E50654 /* PokerPlayer.m */; };
 		FCCEDC6A1E8FCC8600E50654 /* PokerTable.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCEDC671E8FCC8500E50654 /* PokerTable.m */; };
 		FCCEDC701E914E6600E50654 /* PlayingCard.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCEDC6F1E914E6600E50654 /* PlayingCard.m */; };
@@ -60,9 +63,6 @@
 		FCE8B7781F819AF200EAD44D /* ExternalWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE8B7721F819AF100EAD44D /* ExternalWindow.m */; };
 		FCE8B7791F819AF200EAD44D /* CoordinatesManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = FCE8B7751F819AF200EAD44D /* CoordinatesManager.mm */; };
 		FCE8B77A1F819AF200EAD44D /* ImageSection.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE8B7771F819AF200EAD44D /* ImageSection.m */; };
-		FCE8B7831F819B1700EAD44D /* POdds.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE8B77B1F819B1700EAD44D /* POdds.m */; };
-		FCE8B7841F819B1700EAD44D /* xorshift.c in Sources */ = {isa = PBXBuildFile; fileRef = FCE8B7801F819B1700EAD44D /* xorshift.c */; };
-		FCE8B7851F819B1700EAD44D /* poker.c in Sources */ = {isa = PBXBuildFile; fileRef = FCE8B7821F819B1700EAD44D /* poker.c */; };
 		FCE8B78A1F819B5C00EAD44D /* MagicNumbers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FCE8B7861F819B5C00EAD44D /* MagicNumbers.cpp */; };
 		FCE8B7911F819B9E00EAD44D /* CVHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = FCE8B78D1F819B9E00EAD44D /* CVHelper.mm */; };
 		FCE8B7921F819B9E00EAD44D /* CVSearchHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = FCE8B7901F819B9E00EAD44D /* CVSearchHelper.mm */; };
@@ -183,6 +183,14 @@
 		FC8339D21E69D8E50072706B /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		FC8339EA1E6D75020072706B /* NSImage+subImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSImage+subImage.h"; path = "NSImage/NSImage+subImage.h"; sourceTree = "<group>"; };
 		FC8339EB1E6D75020072706B /* NSImage+subImage.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "NSImage+subImage.mm"; path = "NSImage/NSImage+subImage.mm"; sourceTree = "<group>"; };
+		FC9ED9641F86E41A00FD28AD /* podds */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = podds; sourceTree = "<group>"; };
+		FC9ED9651F86E41A00FD28AD /* xorshift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xorshift.h; sourceTree = "<group>"; };
+		FC9ED9661F86E41A00FD28AD /* POdds.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = POdds.m; sourceTree = "<group>"; };
+		FC9ED9671F86E41A00FD28AD /* poker.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = poker.c; sourceTree = "<group>"; };
+		FC9ED9681F86E41A00FD28AD /* poddsold */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = poddsold; sourceTree = "<group>"; };
+		FC9ED9691F86E41A00FD28AD /* xorshift.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = xorshift.c; sourceTree = "<group>"; };
+		FC9ED96A1F86E41A00FD28AD /* poker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = poker.h; sourceTree = "<group>"; };
+		FC9ED96B1F86E41A00FD28AD /* POdds.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = POdds.h; sourceTree = "<group>"; };
 		FCCEDBD61E8BDBA200E50654 /* Enums.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Enums.h; sourceTree = "<group>"; };
 		FCCEDC641E8FCC8500E50654 /* PokerPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PokerPlayer.h; sourceTree = "<group>"; };
 		FCCEDC651E8FCC8500E50654 /* PokerPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PokerPlayer.m; sourceTree = "<group>"; };
@@ -209,14 +217,6 @@
 		FCE8B7751F819AF200EAD44D /* CoordinatesManager.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = CoordinatesManager.mm; path = "External Window/CoordinatesManager.mm"; sourceTree = "<group>"; };
 		FCE8B7761F819AF200EAD44D /* ExternalWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ExternalWindow.h; path = "External Window/ExternalWindow.h"; sourceTree = "<group>"; };
 		FCE8B7771F819AF200EAD44D /* ImageSection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ImageSection.m; path = "External Window/ImageSection.m"; sourceTree = "<group>"; };
-		FCE8B77B1F819B1700EAD44D /* POdds.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = POdds.m; path = "Universal Poker Bot/Poker Math/POdds/POdds.m"; sourceTree = SOURCE_ROOT; };
-		FCE8B77C1F819B1700EAD44D /* POdds.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = POdds.h; path = "Universal Poker Bot/Poker Math/POdds/POdds.h"; sourceTree = SOURCE_ROOT; };
-		FCE8B77D1F819B1700EAD44D /* xorshift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = xorshift.h; path = "Universal Poker Bot/Poker Math/POdds/xorshift.h"; sourceTree = SOURCE_ROOT; };
-		FCE8B77E1F819B1700EAD44D /* podds */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = podds; path = "Universal Poker Bot/Poker Math/POdds/podds"; sourceTree = SOURCE_ROOT; };
-		FCE8B77F1F819B1700EAD44D /* poker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = poker.h; path = "Universal Poker Bot/Poker Math/POdds/poker.h"; sourceTree = SOURCE_ROOT; };
-		FCE8B7801F819B1700EAD44D /* xorshift.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = xorshift.c; path = "Universal Poker Bot/Poker Math/POdds/xorshift.c"; sourceTree = SOURCE_ROOT; };
-		FCE8B7811F819B1700EAD44D /* poddsold */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = poddsold; path = "Universal Poker Bot/Poker Math/POdds/poddsold"; sourceTree = SOURCE_ROOT; };
-		FCE8B7821F819B1700EAD44D /* poker.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = poker.c; path = "Universal Poker Bot/Poker Math/POdds/poker.c"; sourceTree = SOURCE_ROOT; };
 		FCE8B7861F819B5C00EAD44D /* MagicNumbers.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = MagicNumbers.cpp; path = Deprecated/Deps/MagicNumbers.cpp; sourceTree = "<group>"; };
 		FCE8B7871F819B5C00EAD44D /* structs_defines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = structs_defines.h; path = Deprecated/Deps/structs_defines.h; sourceTree = "<group>"; };
 		FCE8B7881F819B5C00EAD44D /* MagicNumbers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MagicNumbers.h; path = Deprecated/Deps/MagicNumbers.h; sourceTree = "<group>"; };
@@ -534,27 +534,28 @@
 			name = Deps;
 			sourceTree = "<group>";
 		};
+		FC9ED9631F86E41A00FD28AD /* POdds */ = {
+			isa = PBXGroup;
+			children = (
+				FC9ED9641F86E41A00FD28AD /* podds */,
+				FC9ED9651F86E41A00FD28AD /* xorshift.h */,
+				FC9ED9661F86E41A00FD28AD /* POdds.m */,
+				FC9ED9671F86E41A00FD28AD /* poker.c */,
+				FC9ED9681F86E41A00FD28AD /* poddsold */,
+				FC9ED9691F86E41A00FD28AD /* xorshift.c */,
+				FC9ED96A1F86E41A00FD28AD /* poker.h */,
+				FC9ED96B1F86E41A00FD28AD /* POdds.h */,
+			);
+			name = POdds;
+			path = "Poker Math/POdds";
+			sourceTree = "<group>";
+		};
 		FCA15E2E1E92AC75000A8C60 /* Poker Math */ = {
 			isa = PBXGroup;
 			children = (
-				FCA15E2F1E92AC7F000A8C60 /* POdds */,
+				FC9ED9631F86E41A00FD28AD /* POdds */,
 			);
 			name = "Poker Math";
-			sourceTree = "<group>";
-		};
-		FCA15E2F1E92AC7F000A8C60 /* POdds */ = {
-			isa = PBXGroup;
-			children = (
-				FCE8B77E1F819B1700EAD44D /* podds */,
-				FCE8B77C1F819B1700EAD44D /* POdds.h */,
-				FCE8B77B1F819B1700EAD44D /* POdds.m */,
-				FCE8B7811F819B1700EAD44D /* poddsold */,
-				FCE8B7821F819B1700EAD44D /* poker.c */,
-				FCE8B77F1F819B1700EAD44D /* poker.h */,
-				FCE8B7801F819B1700EAD44D /* xorshift.c */,
-				FCE8B77D1F819B1700EAD44D /* xorshift.h */,
-			);
-			path = POdds;
 			sourceTree = "<group>";
 		};
 		FCCEDBD01E8BD14A00E50654 /* CVClasses */ = {
@@ -660,6 +661,7 @@
 				FC8339751E6883F50072706B /* MainMenu.xib in Resources */,
 				FC3A0A051E70A364004A1994 /* zyngaTable.plist in Resources */,
 				FC3A0A0B1E719B6A004A1994 /* relativeZyngaDict.plist in Resources */,
+				FC9ED96C1F86E42500FD28AD /* podds in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -686,11 +688,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC9ED96E1F86E44F00FD28AD /* poker.c in Sources */,
+				FC9ED96D1F86E44B00FD28AD /* POdds.m in Sources */,
 				FC8339AC1E6981D50072706B /* swap.c in Sources */,
 				FC8339A51E6981D50072706B /* NSData+Adler32.m in Sources */,
 				FC2781A21E9FD544001541AB /* NSString+cleaning.m in Sources */,
 				FC8339EC1E6D75020072706B /* NSImage+subImage.mm in Sources */,
-				FCE8B7841F819B1700EAD44D /* xorshift.c in Sources */,
 				FC8339A31E6981D50072706B /* gcd.c in Sources */,
 				FC8339A41E6981D50072706B /* lcm.c in Sources */,
 				FCE8B7701F819A8300EAD44D /* NumbersHelper.m in Sources */,
@@ -720,9 +723,7 @@
 				FC65DD501E944C8200EDA21C /* ImageIndex.mm in Sources */,
 				FCE8B76E1F819A8300EAD44D /* PokerLogger.m in Sources */,
 				FC8339AB1E6981D50072706B /* BaseCharacters.m in Sources */,
-				FCE8B7831F819B1700EAD44D /* POdds.m in Sources */,
 				FCCEDC6A1E8FCC8600E50654 /* PokerTable.m in Sources */,
-				FCE8B7851F819B1700EAD44D /* poker.c in Sources */,
 				FC3A0A0F1E719D2B004A1994 /* StateMonitoringWindow.mm in Sources */,
 				FC8339A91E6981D50072706B /* NSString+stringAsBase.m in Sources */,
 			);
