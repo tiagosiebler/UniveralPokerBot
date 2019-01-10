@@ -2,10 +2,41 @@
 
 ![table1](images/table1.png)
 
+## Contributions
+My focus is currently not on further developing this project, but I will review pull requests. If you'd like to help, pull requests are openly welcome.
+
+## Coffee
+If you found this project interesting or useful, buy me a coffee using any of these:
+- SmartCash: SR8CMmWAjG3wiRrK5F72Xx7HyUSNUnE9eb
+- XRP: rDsbeomae4FXwgQTJp9Rs64Qg9vDiTCdBv destinationTag: 92824144
+- LTC: MBDsV17EfXP5BrsEgDgAKiTMXWwQeHEgPf
+- BTC: 3HF6E6gqv7FN3W8hAkJeM2bXuu4sUrRMYK
+
 ## Abstract
 This started as an experiment on April 2017. I wanted to see how challenging it would be to build a system that could follow a game of poker on-screen, and understand every step of the game.
 
 I’ve designed almost every component of this experiment to be as dynamic as possible, with the long-term goal being a complete poker system that can be easily re-adapted for different Texas HoldEm interfaces with minimal work and preferably without recompiling the whole project.
+
+The current setup worked better than expected, in the time I worked on this. The bot played well for hours on end, as long as the computer was left running.
+
+## Related Tools
+These tools were adapted or built while this experiment was in progress:
+- [Caffe Indexer](https://github.com/tiagosiebler/CaffeIndexer)
+  - Speed up classfiying images and removing noise, for anything onscreen that wasn't recognised, using a manually trained Caffe model.
+  - Drastically sped up the [recognition challenge](#whats-next) mentioned further down.
+- [Caffe Card Classifier](https://github.com/tiagosiebler/CaffeClassifierMac)
+  - Use a pre-trained neural network to estimate what playing card is currently in an image.
+  - Output returns top 5 matches in JSON format, each with a degree of confidence.
+  - Similar to the indexer, without the UI.
+- [Caffe Dataset Prep](https://github.com/tiagosiebler/CaffeDatasetPrep)
+  - Prepare the dataset used to train teh caffe model, using NVidia DIGITS.
+  - Multiplies the dataset though might encourage overfitting. A useful side-effect, to the degree I needed this.
+- [Pixel Ruler](https://github.com/tiagosiebler/PixelRuler)
+  - Some offsets were done based on relative pixels, that's how this bot knows where to look for cards and other known images.
+  - This modification of a pixel ruler found online helps take these measurements to configure the bot.
+
+# Development Milestones
+Here's a breakdown on progress made.
 
 ## 17 April 2017 - The Beginning
 ### Zynga Texas HoldEm Poker
@@ -210,7 +241,7 @@ An hour of play alone generates at least 100 new images that need to be manually
 It’s too slow to make a part of the normal bot workflow, but reliable enough to be used as a parallel/secondary process. Recognition so far is encouraging, but it takes quite a bit of time to tune.
 
 ---
-## 1st May 2017 - Post-flop Odds – Playing More than Just Bingo Blinds, with Mixed Results
+## 1st May 2017 - Post-flop Odds & Playing More than Just Bingo Blinds, with Mixed Results
 
 We saw that building an odds-based bingo strategy for Texas Holdem poker has some valuable strengths. At least when testing in the free-to-play Zynga poker environment.
 
@@ -281,7 +312,7 @@ There isn’t enough data to form a more firm conclusion, and I should really be
   - If it’s almost a guaranteed win, perhaps we should consider risking an aggressive call/raise, since there’s a lower chance another player will win.
   - That should maximise the profit from these kind of hands.
 
-  ### Improvements & Tweaks
+### Improvements & Tweaks
 - Increase the bingo threshold based on the data.
   - Weaker hands that have caused more losses than gains have been eliminated from the bingo strategy, and will instead be played strongly in the blinds if the odds are still in favour.
   - Stronger hands are still played with the bingo strategy, so we keep the gains they provide in the strategy.
@@ -293,3 +324,268 @@ There isn’t enough data to form a more firm conclusion, and I should really be
   - This may reduce minor gains from what may be seen as “bluffs” (bot raising when odds are in favour, even if hand isn’t that strong). We’ll need to see if that offsets the rest of the gains or not.
 
 In the next post I’ll review the effects this had as well as some of the results.
+
+---
+## 3rd May 2017
+
+In my previous post I discussed the introduction of the first odds-based gameplay beyond the blinds.
+```
+float aggression = 1.0;
+long long maxCall = (self.totalBets + self.totalPot) * self.winningOdds * aggression;
+```
+
+It works, and does have potential for a profit, but these were the key weaknesses in this strategy:
+
+- Too much aggression in the following situations:
+  - High cards with good odds but no matches at all.
+  - Weaker pairs, including pocket pairs.
+  - Two pairs, when one of the two is a pocket pair in the player hand.
+- Too little aggression in the following situations:
+  - Rarer matches such as three of a kind or stronger, maximising profit for matches that happen less often and usually beat other players.
+  - Especially earlier in the game, since it’s less likely others can compete with those. We want to push out players that have doubts, while adding to the pot.
+  - Especially for three of a kind or better when we’re holding a pocket pair in the flop, since it’s harder for other players to predict this as a competing option.
+
+The goal of the latest update was to address these weaknesses, among several bug & stability fixes. The current implementation of this is something like this:
+
+```
+float aggressionFactor = 1.0;
+// set to true if table cards have a pair
+bool tablePair = false;
+switch(gameState){
+    case kBlinds:
+        // blinds don't need tweaking, so why bother
+        break;
+
+    case kFlop:
+        // high cards are weak, tone it down
+        if(hand == kHandHighCard) aggressionFactor = 0.9;
+
+        // table pairs are weak pairs
+        else if(
+                (hand == kHandPair && tablePair) ||
+                (hand == kHandTwoPair && tablePair)
+                )
+            aggressionFactor = 0.9;
+
+        // pairs and two pairs are not great, especially if we're holding one of the pairs in-hand
+        else if((hand == kHandPair && pocketPair) ||
+                (hand == kHandTwoPair && pocketPair)
+                )
+            aggressionFactor = 0.9;
+        // pair here isn't great in general, so tone it down
+        else if(hand == kHandPair) aggressionFactor = 0.8;
+
+        // but two pairs are pretty good here, if we're not holding a pair
+        else if(hand == kHandTwoPair) aggressionFactor = 1.2;
+
+        // trips rock, even if we're holding two out of three.
+        else if(hand == kHandThreeOfAKind && pocketPair) aggressionFactor = 1.5;
+
+        // though on-table trips are also okay
+        else if(hand == kHandThreeOfAKind) aggressionFactor = 1.4;
+        // generally strong hands to have in the flop, as unlikely as they are, worth pushing
+        else if(hand == kHandStraight || hand == kHandFlush) aggressionFactor = 1.6;
+        // rare in the flop, but awesome at this stage, let's push it more
+        else if(hand == kHandFullHouse) aggressionFactor = 1.7;
+        // absolute beast to have it at this stage, don't hold back
+        else if(hand == kHandFourOfAKind) aggressionFactor = 2.0;
+        // rare
+        else if(hand == kHandStraightFlush) aggressionFactor = 3;
+
+        break;
+
+    case kTurn:
+        // high cards are weak, tone it down even more, only one card left
+        if(hand == kHandHighCard) aggressionFactor = 0.8;
+
+        // table pairs are weak pairs
+        else if(
+                (hand == kHandPair && tablePair) ||
+                (hand == kHandTwoPair && tablePair)
+                )
+            aggressionFactor = 0.7;
+
+        // pairs and two pairs are not great, especially if we're holding one of the pairs in-hand
+        else if((hand == kHandPair && pocketPair) ||
+                (hand == kHandTwoPair && pocketPair)
+                )
+            aggressionFactor = 0.7;
+
+        // pair here isn't great, so tone it down
+        else if(hand == kHandPair) aggressionFactor = 0.7;
+
+        // but two pairs are pretty good here, if we're not holding a pair
+        else if(hand == kHandTwoPair) aggressionFactor = 1.3;
+
+        // trips rock, even if we're holding two out of three.
+        else if(hand == kHandThreeOfAKind && pocketPair) aggressionFactor = 1.8;
+
+        // though on-table trips are also okay
+        else if(hand == kHandThreeOfAKind) aggressionFactor = 1.4;
+
+        // generally strong hands to have in the turn
+        else if(hand == kHandStraight || hand == kHandFlush) aggressionFactor = 1.7;
+
+        // more common in the flop, but rare enough to keep pushing on
+        else if(hand == kHandFullHouse) aggressionFactor = 1.7;
+
+        // absolute beast to have it at this stage, don't hold back
+        else if(hand == kHandFourOfAKind) aggressionFactor = 2.0;
+
+        // rare
+        else if(hand == kHandStraightFlush) aggressionFactor = 3;
+
+        break;
+
+    case kRiver:
+        // high cards are weak, tone it down even more, any pair wins over this
+        if(hand == kHandHighCard) aggressionFactor = 0.7;
+
+        // table pairs are weak pairs
+        else if(
+                (hand == kHandPair && tablePair) ||
+                (hand == kHandTwoPair && tablePair)
+                )
+            aggressionFactor = 0.6;
+
+        // pairs and two pairs are not great, especially if we're holding one of the pairs in-hand
+        else if((hand == kHandPair && pocketPair) ||
+                (hand == kHandTwoPair && pocketPair)
+                )
+            aggressionFactor = 0.6;
+
+        // pair here isn't great in general, so tone it down
+        else if(hand == kHandPair) aggressionFactor = 0.6;
+
+        // but two pairs are pretty good here, if we're not holding a pair
+        else if(hand == kHandTwoPair) aggressionFactor = 1.2;
+
+        // trips rock, even if we're holding two out of three.
+        else if(hand == kHandThreeOfAKind && pocketPair) aggressionFactor = 2;
+
+        // though on-table trips are also okay
+        else if(hand == kHandThreeOfAKind) aggressionFactor = 1.2;
+
+        // generally strong hands to have in the turn
+        else if(hand == kHandStraight || hand == kHandFlush) aggressionFactor = 1.4;
+
+        // more common in the river, but rare enough to keep pushing on
+        else if(hand == kHandFullHouse) aggressionFactor = 1.8;
+
+        // absolute beast to have, let's get all that we can
+        else if(hand == kHandFourOfAKind) aggressionFactor = 5.0;
+
+        // rare
+        else if(hand == kHandStraightFlush) aggressionFactor = 10.0;
+
+        break;
+}
+return aggressionFactor;
+```
+
+The tablePair flag isn’t yet implemented and on the to-do list, but the rest is fully functional. I’m not a fan of the chained if-else statements, but for speed and as a proof of concept for this idea, this’ll do for now.
+
+### Strategy Results
+I ran a number of tests with some tweaks (and bugs) in between. In the current strategy, we’re still leveraging the bingo odds of going all-in if the preflop gives us strong-enough odds, but we’re also playing hands that have potential all the way to the end of the round. Pairs and high cards are played less aggressively than before, but stronger hands are pushed more to increase the potential profit.
+
+The bot played 4 sessions, the last of which was on another test account that hasn’t been used in a week (as a control, I don’t trust Zynga’s card distribution). 3 out of 4 sessions were extremely profitable, much higher than any other session I’ve done with this bot so far. One session (the third on the primary test account) made a loss of roughly 2 buy-ins (800k x 2), but watching it play, it had the mother of all bad hands the whole way through. I guess the bot saw it’s first bad beat. Here’s the breakdown:
+
+#### 55 hands at 4k big blind – profit $5 million
+![55h4kbb](images/55h4kbb.png)
+
+##### Summary
+- Overall profit of 6 max-buy ins (800k x 6.25).
+##### Breakdown
+- Bingo in preflop:
+  - ~9m gained from all-in at blinds.
+  - ~6m lost from all-in at blinds.
+- Odds logic:
+  - ~1m gained from playing a high-card aggressively, I think odds for a straight were high? Not sure on this one.
+  - ~100k lost from playing with high-card.
+  - ~400k lost from playing (or folding post-flop) pairs. Much better.
+  - ~1.5m gained from playing two pairs aggressively.
+  - ~16k gained from raising trips on the river.
+##### Learning points
+- Results are much better after tweaking the one pair aggression. Losses are much more controlled.
+- Bingo preflop strategy is seeing heavy fluctuation, may need to review bigger dataset on tweak bingo thresholds to see if losses can be reduced. Overall profit though.
+
+#### 49 hands at 4k big blind – profit $10 million
+![49h4kbb](images/49h4kbb.png)
+
+##### Summary
+- Overall profit of 13 max-buy ins (800k x 12.75).
+- This session played some monster hands, but sadly I missed the details of this while making dinner.
+- From the logs I see this session saw 4 monster AQs in the blinds, all of which were hugely profitable.
+##### Breakdown
+- Bingo in preflop:
+  - ~11.5m profit from all-in in blinds.
+  - ~2m loss from all-in in blinds.
+- Odds logic:
+  - ~150k profit from pairs, trips and a flush.
+    - One trip was from a pocket pair, and gave the biggest profit.
+    - Flush didn’t happen until the river, so the pot couldn’t be fed in time.
+  - ~40k loss from high cards and pairs.
+##### Learning Points
+- Losses were reduced from weaker hands.
+- The bingo preflop strategy really shined this round, with minimal losses. Might have been luck though.
+- Not enough good hands to estimate strength of current odds strategy.
+
+#### 75 hands at 4k big blind – loss $1 million
+![75h4kbb](images/75h4kbb.png)
+
+##### Summary
+- Overall loss of ~2 max-buy ins (800k x 1.5).
+- This was a terrible session, one of the worst I’ve seen so far.
+- I think that’s pretty clear at 75 hands played, heavy losses from the start and mild recovery from the second half of gameplay.
+##### Breakdown
+- Bingo in preflop:
+  - ~800k in profit
+  - ~1.8m in loss
+- Odds logic:
+  - ~900k gained from high cards
+  - ~200k lost from high cards
+  - ~200k gained from pairs
+  - ~1m lost from pairs
+  - ~100k gained from two pairs or better.
+##### Learning Points
+Pairs played too aggressively once again, provided a greater overall loss than gain.
+High cards are weirdly strong and bringing in a fair amount of gain, perhaps lowering the aggression on them is a mistake. I’ll keep my eyes on that in the data, as I don’t want to act prematurely on what could be considered “luck”.
+Hands with two pairs or better are providing an overall profit, so that tactic is working.
+
+#### 75 hands at 4k big blind – loss $1 million
+![75h4kbb](images/75h4kbb.png)
+
+##### Summary
+- Strong overall profit of ~8 max buy ins (800k * 7.5).
+- Smaller dataset this session, but showed positive results on a separate account, re-emphasising this wasn’t just a fluke.
+- All bingo preflops were a win, resulting in ~5m profit.
+##### Breakdown
+- Bingo in preflop:
+  - ~5m in profit
+  - ~no loss
+- Odds logic:
+  - ~600k gained from high cards
+  - ~80k lost from high cards
+  - ~400k gained from pairs
+  - ~70k lost from pairs
+  - ~200k gained from two pairs or better.
+  - ~300k lost from two pairs, with a pair on the table.
+##### Learning Points
+- Pairs were under more control in this one, with lower losses while maintaining moderate gains.
+- High cards shone again, perhaps they’re more important than anticipated.
+- A weak two pair was played too aggressively, since the bot didn’t know one of the pairs was on-table. Lead to a heavy loss, maybe due to a higher pair or a triple on table. Sadly didn’t see this one as it happened.
+  - Need to implement logic to lower aggression with table pairs, when all the bot has is a two pair or single pair because of this.
+
+### Strategy Summary
+- More data is supporting that this odds strategy works, with dynamic aggression depending on hand strength.
+- The bingo component of the preflop strategy may need tweaking, if there are pocket odds providing more consistent losses. I need more data to support that kind of choice.
+- The odds-based post-flop strategy is continuing to provide gradual/long-term profits, which seem to be increasing from the latest tweaks. Will try to aggregate over more sessions with the latest tweaks unchanged.
+- Primary losses are currently:
+  - Unlucky preflop all-ins, although very minor now relative to the gains. More data needed before any changes are made here.
+  - Aggressive play with weak pairs, or pairs or two pairs when there’s a pair on the table. This still needs logic to detect that, and has room for improvement.
+- I noticed a bug in the logic tracking wins/losses/current chip count. The bug is now fixed, but some chip changes/wins/losses may have not been registered in these sessions 🙁
+
+That’s all for now! Boring stats & analytics aside, the progress is encouraging! Several sessions are now showing more profit than I’ve ever managed from the bot. Not only am I not losing all my chips, but I’m winning more than I’m losing (overall)!
+
+---
+
