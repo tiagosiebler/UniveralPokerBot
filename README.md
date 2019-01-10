@@ -209,3 +209,87 @@ An hour of play alone generates at least 100 new images that need to be manually
 
 It’s too slow to make a part of the normal bot workflow, but reliable enough to be used as a parallel/secondary process. Recognition so far is encouraging, but it takes quite a bit of time to tune.
 
+---
+## 1st May 2017 - Post-flop Odds – Playing More than Just Bingo Blinds, with Mixed Results
+
+We saw that building an odds-based bingo strategy for Texas Holdem poker has some valuable strengths. At least when testing in the free-to-play Zynga poker environment.
+
+However, this strategy limits gameplay to just the blinds. If a strong-enough hand isn’t seen in 100 hands, that’s 100 hands we’re blindly folding. What if those hands have potential, just not enough to risk the bingo strategy? That’s the next step of this experiment. As a relatively simple starting point I’ve looked at adopting the strategy from the EvBot, built by tostercx: https://github.com/mdp/JsPoker/pull/26
+
+I liked the approach of tostercx’s EvBot. It takes odds into account, as well as the current money on the table, before deciding if it’s worth calling the current hand, or even if it should raise given its chance of winning. Above all, it outperformed the other bots in the JsPoker tournament almost every execution, so it has potential.
+
+Since all it needs current odds and current bet amount, the implementation is relatively simple in comparison to the more complex decision making that could be built here. In the end, this is the key component driving this decision:
+```
+float aggression = 1.0;
+long long maxCall = (self.totalBets + self.totalPot) * self.winningOdds * aggression;
+[self handleMaxCall:maxCall];
+```
+
+The handleMaxCall: method is a little more complex. Here is a summary of that workflow:
+- Read the multiplier from the maxCall value (how many times the big blind, is the current maxCall value).
+- If the maxCall is less than the current call/raise amount from the players before you, with a bigger difference than the big blind, fold. The risk isn’t worth the current pot.
+- If the maxCall is more than the current call/raise amount from the players before you, trigger a raise for that difference.
+- If the maxCall is roughly the same as the current call/raise amount (by a difference margin of the big blind value), then simply call.
+- Lastly, if the maxCall amount is less than the big blind, but we can check, then just check to continue.
+
+The bot will now check when the hand isn’t great, but it can continue without spending any money. It’ll raise with a stronger hand, and it’ll call anyone else’s raise if the current hand and pot are strong enough to support that choice. Based on probabilities alone, if we tune this there should be potential to win more than we lose, or at least break-even.
+
+### Strategy Results
+I ran a number of tests with some tweaks (and bugs) in between. In the current strategy, we’re still leveraging the bingo odds of going all-in if the preflop gives us strong-enough odds, but we’re also playing hands that have potential all the way to the end of the round. This has some benefits as well as draw-backs, but firstly, the results of this.
+
+#### 81 hands at 4k big blind – loss
+![81hands4k1](images/81hands4k1.png)
+
+##### Summary
+- Overall loss of 2 max-buy ins (800k x 2).
+##### Breakdown
+- 500k lost from all-in at blinds, with AK (5 players, 31% winning chance). 800k recovered from all-in at blinds, with other hands.
+- 800k lost from raising too aggressively when hand was just a pair, and not even the highest on the table.
+  - Odds at 57% for that hand, with 2 people playing (1v1).
+  - Other player probably just had a higher pair, if not more.
+  - That was too aggressive for a low pair.
+- 300k lost from raising too aggressively when hand was just a pair, with 3 potentially higher pairs on the table.
+  - Odds at 22% for that hand, with 4 people playing.
+  - Raised too aggressively with a pocket 66, while the higher table cards were a 10, J and 7.
+  - Again, too aggressive for a low pair, especially in the later stage of that game.
+##### Learning Points
+- Too aggressive on weaker & common hands (low pairs).
+- All-in blinds may need review.
+
+#### 94 hands at 4k big blind – profit
+![94h4kbb](images/94h4kbb.png)
+
+##### Summary
+- Overall profit of 2 max-buy ins (roughly $1.6 million in profit, buy in at 800k).
+##### Breakdown
+- Biggest gains were from preflop all-ins (13 hands, only two were losses of roughly 1.4 million, the rest were substantially more in profit, 4-5million estimated).
+- 300k lost on calling low pair, with two pairs on the table that could have given someone else trips.
+- 400k lost from raising too strong with AT in the preflop (reason for this not explained above).
+- 100k lost on raising low pair.
+##### Learning Points
+- Blend of bingo & odds strategy has potential.
+- Biggest losses were from weak single pairs or high cards being played too aggressively, when odds were in favour.
+
+### Strategy Summary
+There isn’t enough data to form a more firm conclusion, and I should really be digging deeper into the gains as well as the losses, but so far I’m making these assumptions:
+
+- The odds-based post-flop strategy isn’t causing massive losses (yay).
+- The bingo strategy blended in is still providing some heavy gains, but also some losses from the hands played at weaker odds.
+- The primary losses are caused from weak-bingo all-ins, as well as playing too aggressively with common weak pairs.
+- I saw the bot fold on rarer hands with higher winning odds (straight, 90% winning odds), because someone raised much more than the pot had.
+  - I consider this a flaw for rarer hands.
+  - If it’s almost a guaranteed win, perhaps we should consider risking an aggressive call/raise, since there’s a lower chance another player will win.
+  - That should maximise the profit from these kind of hands.
+
+  ### Improvements & Tweaks
+- Increase the bingo threshold based on the data.
+  - Weaker hands that have caused more losses than gains have been eliminated from the bingo strategy, and will instead be played strongly in the blinds if the odds are still in favour.
+  - Stronger hands are still played with the bingo strategy, so we keep the gains they provide in the strategy.
+  - This should reduce the losses from these hands, with minor reduction on the rare occasions that these hands provide a gain. If they lose more than they bring in, then this should have an overall benefit.
+- Tweak the aggression factor depending on how rare the current hand is, with these goals:
+  - Play less aggressively with weaker pairs or high cards, with less regard for higher odds.
+  - Play more aggressively with rarer matches such as three of a kind or stronger, maximising profit for matches that happen less often and usually beat other players.
+  - This should reduce losses substantially, while sharpening the profits of rarer hands.
+  - This may reduce minor gains from what may be seen as “bluffs” (bot raising when odds are in favour, even if hand isn’t that strong). We’ll need to see if that offsets the rest of the gains or not.
+
+In the next post I’ll review the effects this had as well as some of the results.
