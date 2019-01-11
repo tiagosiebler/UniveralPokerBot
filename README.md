@@ -37,6 +37,8 @@ These tools were leveraged, adapted or built while this experiment was in progre
 - [Podds](https://github.com/lostella/podds)
   - Multithreaded poker odds evaluation tool.
   - This would've been much harder without Lorenzo's work on Podds, huge thanks to that!
+- [OpenCV](https://opencv.org/)
+  - Much image recognition and processing [depends](/Universal%20Poker%20Bot/CVClasses) on OpenCV
 
 # Development Milestones
 Here's a breakdown on progress made.
