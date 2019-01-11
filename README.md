@@ -78,6 +78,8 @@ The simplest form uses the current pocket cards in the decision making process, 
 
 In the current state of my poker bot for mac, this is relatively easy to check for:
 
+<details>
+<summary>Snippet</summary>
 ```
 NSString *pocketCards = self.pokerTable.myPlayer.getPocketCards;
 NSLog(@"got pocket cards: %@",pocketCards);
@@ -88,6 +90,7 @@ NSSet *allInCardsSet = [NSSet setWithArray:[allInCardsStr componentsSeparatedByS
 NSLog(@"checking if cards (%@) are found in set: %@", pocketCards, allInCardsStr);
 bool shouldAllIn = [allInCardsSet containsObject:pocketCards];
 ```
+</details>
 
 If a match is found, the bot will go all in.
 
@@ -106,19 +109,22 @@ This kind of preflop recognition doesn't account for that. The next posts cover 
 ## 22 April 2017 - Preflop Odds - Building a Better Bingo Bot
 
 I showcased some of the first results of my poker experiment. The automated logic running my poker bot has been set to wait for specific pocket cards in the preflop, and if a match is found, simply go all in:
+<details>
+<summary>Snippet</summary>
 ```
 NSString *allInCardsStr = @"AA KK QQ JJ AJ AK TT 99 88 77 AQ KQ";
 NSSet *allInCardsSet = [NSSet setWithArray:[allInCardsStr componentsSeparatedByString:@" "]];
 NSLog(@"checking if cards (%@) are found in set: %@",pocketCards, allInCardsStr);
 shouldAllIn = [allInCardsSet containsObject:pocketCards];
 ```
+</details>
 
 This kind of “bingo botting” has potential, and has yielded results so far, but there is still too much luck and too much risk involved for my liking. Probabilities of winning change depending on the number of players, and this logic doesn’t account for that. This something that can benefit from refined control.
 
 These are the odds involved in the preflop for some of these cards of interest:
+<details>
+<summary>Probabilities for players in game vs starting hand</summary>
 ```
-            Players in game vs starting hand
-
      2      3      4      5      6      7      8      9
 AA   0.851  0.733  0.634  0.557  0.489  0.431  0.384  0.343
 KK   0.822  0.688  0.581  0.495  0.426  0.372  0.326  0.290
@@ -145,6 +151,7 @@ KQ   0.603  0.433  0.342  0.283  0.241  0.208  0.181  0.159
 KJ   0.593  0.419  0.325  0.263  0.223  0.189  0.165  0.146
 KT   0.584  0.404  0.309  0.252  0.210  0.179  0.154  0.135
 ```
+</details>
 
 Note the sharp variations depending on not just the number of players involved, but also in whether or not your cards have the same suit. These numbers were calculated using the same probability simulator used within the poker bot, with 200000 simulations based on the number of players available and the cards currently visible, assuming no one ever folds. The results can also be replicated online with various browser based odds simulators, and should approximately fix these measurements.
 
@@ -152,6 +159,8 @@ Reviewing the table above we’ll gain a clearer picture why it might not be a g
 
 This is the resulting preflop logic for the current bingo-based poker bot, tweaked based on experimentation:
 
+<details>
+<summary>Snippet</summary>
 ```
 switch(self.playerCount){
     case 2:
@@ -231,6 +240,7 @@ switch(self.playerCount){
         break;
 }
 ```
+</details>
 
 The decision-making logic is still extremely simple, but the tighter odds-driven control means more low-risk hands are played (e.g. when less people are playing), and less higher-risk hands are creating a loss when more people are involved. That’s what we’re interested in. We can’t win every hand, but we can try to win more than we lose, and part of that is keeping probabilities in our favour as much as we can.
 
@@ -255,11 +265,14 @@ However, this strategy limits gameplay to just the blinds. If a strong-enough ha
 I liked the approach of tostercx’s EvBot. It takes odds into account, as well as the current money on the table, before deciding if it’s worth calling the current hand, or even if it should raise given its chance of winning. Above all, it outperformed the other bots in the JsPoker tournament almost every execution, so it has potential.
 
 Since all it needs current odds and current bet amount, the implementation is relatively simple in comparison to the more complex decision making that could be built here. In the end, this is the key component driving this decision:
+<details>
+<summary>Snippet</summary>
 ```
 float aggression = 1.0;
 long long maxCall = (self.totalBets + self.totalPot) * self.winningOdds * aggression;
 [self handleMaxCall:maxCall];
 ```
+</details>
 
 The handleMaxCall: method is a little more complex. Here is a summary of that workflow:
 - Read the multiplier from the maxCall value (how many times the big blind, is the current maxCall value).
@@ -352,6 +365,8 @@ It works, and does have potential for a profit, but these were the key weaknesse
 
 The goal of the latest update was to address these weaknesses, among several bug & stability fixes. The current implementation of this is something like this:
 
+<details>
+<summary>Snippet</summary>
 ```
 float aggressionFactor = 1.0;
 // set to true if table cards have a pair
@@ -487,6 +502,7 @@ switch(gameState){
 }
 return aggressionFactor;
 ```
+</details>
 
 The tablePair flag isn’t yet implemented and on the to-do list, but the rest is fully functional. I’m not a fan of the chained if-else statements, but for speed and as a proof of concept for this idea, this’ll do for now.
 
