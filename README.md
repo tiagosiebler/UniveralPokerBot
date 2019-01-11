@@ -20,7 +20,7 @@ I’ve designed almost every component of this experiment to be as dynamic as po
 The current setup worked better than expected, in the time I worked on this. The bot played well for hours on end, as long as the computer was left running.
 
 ## Related Tools
-These tools were adapted or built while this experiment was in progress:
+These tools were leveraged, adapted or built while this experiment was in progress:
 - [Caffe Indexer](https://github.com/tiagosiebler/CaffeIndexer)
   - Speed up classfiying images and removing noise, for anything onscreen that wasn't recognised, using a manually trained Caffe model.
   - Drastically sped up the [recognition challenge](#whats-next) mentioned further down.
@@ -34,6 +34,9 @@ These tools were adapted or built while this experiment was in progress:
 - [Pixel Ruler](https://github.com/tiagosiebler/PixelRuler)
   - Some offsets were done based on relative pixels, that's how this bot knows where to look for cards and other known images.
   - This modification of a pixel ruler found online helps take these measurements to configure the bot.
+- [Podds](https://github.com/lostella/podds)
+  - Multithreaded poker odds evaluation tool.
+  - This would've been much harder without Lorenzo's work on Podds, huge thanks to that!
 
 # Development Milestones
 Here's a breakdown on progress made.
